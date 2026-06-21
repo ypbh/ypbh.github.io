@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crazy Award | 表彰自洽的疯狂</title>
+    <title>Crazy Award | 表彰自洽的疯狂 · Celebrating Self-Consistent Madness</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -19,6 +19,7 @@
         h3 { font-size: 1.2em; margin-top: 1.5em; color: #b0b0b0; }
         .subtitle { text-align: center; font-style: italic; margin-bottom: 2.5em; font-size: 1.1em; color: #a0a0a0; }
         .highlight { color: #ffffff; font-weight: bold; }
+        .en { color: #a0a0a0; font-style: italic; margin-bottom: 1.5em; display: block; }
         form {
             background: #151515; border: 1px solid #333; padding: 2em;
             margin-top: 1.5em; border-radius: 6px;
@@ -47,51 +48,71 @@
             background: #1e1e1e; border-left: 4px solid #888;
             padding: 1em; margin-top: 1.5em; font-size: 0.95em; color: #aaa;
         }
+        .notice .en { color: #888; }
     </style>
 </head>
 <body>
 
     <h1>Crazy Award</h1>
-    <div class="subtitle">表彰自洽的疯狂 · 不依赖任何学术权威</div>
+    <div class="subtitle">表彰自洽的疯狂 · Celebrating Self-Consistent Madness</div>
 
     <section>
         <h2>第一章　总则</h2>
+        <span class="en">Chapter 1 · General Provisions</span>
         <p>Crazy奖是一个娱乐性奖项。它表彰的不是“被验证的正确”，而是<span class="highlight">“自洽的疯狂”</span>。它不依附于任何学术机构、任何科研基金、任何国家奖项。它的存在本身，就是对主流评价体系的一次穿孔。</p>
+        <p class="en">The Crazy Award is an entertainment award. It honors not "verified correctness," but <span class="highlight">"self-consistent madness."</span> It is not affiliated with any academic institution, research fund, or national prize. Its very existence is a perforation of the mainstream evaluation system.</p>
     </section>
 
     <section>
         <h2>第二章　得奖条件</h2>
+        <span class="en">Chapter 2 · Award Criteria</span>
+
         <h3>条件一：绝对自洽</h3>
+        <span class="en">Criterion 1 · Absolute Self-Consistency</span>
         <p>理论内部不能有逻辑矛盾。从第一条公理到最后一个推论，必须形成完整的闭环。</p>
+        <p class="en">The theory must contain no internal logical contradictions. From the first axiom to the final deduction, it must form a complete closed loop.</p>
+
         <h3>条件二：极度疯狂</h3>
+        <span class="en">Criterion 2 · Extreme Madness</span>
         <p>理论的核心直觉，必须是主流学术界不敢碰、不愿碰、或者碰了就被边缘化的东西。</p>
+        <p class="en">The core intuition of the theory must be something that mainstream academia dares not touch, refuses to touch, or has marginalized after touching.</p>
+
         <h3>条件三：直觉驱动</h3>
+        <span class="en">Criterion 3 · Intuition-Driven</span>
         <p>理论的起点必须是一个或几个强烈的直觉，而不是数学推导。</p>
+        <p class="en">The starting point of the theory must be one or several powerful intuitions, not mathematical derivations.</p>
+
         <h3>条件四：概念完整</h3>
+        <span class="en">Criterion 4 · Conceptual Completeness</span>
         <p>理论必须是一个体系。有本体论，有操作论，有演化论，有伦理警告。</p>
+        <p class="en">The theory must be a system. It must have ontology, operational theory, evolution theory, and ethical warnings.</p>
     </section>
 
     <section>
-        <h2>第三章　提交理论（mailto 方式）</h2>
+        <h2>第三章　提交理论</h2>
+        <span class="en">Chapter 3 · Submit Your Theory</span>
         <div class="notice">
-            点击下方按钮，将自动调用你设备上的邮件客户端（如 Outlook、Gmail App）。<br>
+            点击下方按钮，将自动调用你设备上的邮件客户端。<br>
             请确保已安装至少一个邮件客户端。如未弹出，可手动发送邮件至 <strong>YOUR_EMAIL@example.com</strong>。
+            <br><br>
+            <span class="en">Click the button below to open your email client automatically.<br>
+            Make sure at least one email client is installed. If it does not pop up, manually send to <strong>YOUR_EMAIL@example.com</strong>.</span>
         </div>
 
         <form id="submissionForm" action="" method="get">
-            <label for="name">理论名称 *</label>
-            <input type="text" id="name" name="name" required placeholder="例如：布理论">
+            <label for="name">理论名称 / Theory Name *</label>
+            <input type="text" id="name" name="name" required placeholder="例如：Fabric Theory / 布理论">
 
             <label for="author">作者 / 笔名 *</label>
-            <input type="text" id="author" name="author" required placeholder="例如：一位12岁的观察者">
+            <input type="text" id="author" name="author" required placeholder="Author or pen name">
 
-            <label for="email">你的联系邮箱 *</label>
-            <input type="email" id="email" name="email" required placeholder="用于接收审核结果">
+            <label for="email">你的联系邮箱 / Your Email *</label>
+            <input type="email" id="email" name="email" required placeholder="To receive review result">
 
-            <label for="abstract">理论摘要 *（可包含全文链接）</label>
-            <textarea id="abstract" name="abstract" rows="8" required placeholder="概述你的核心直觉、公理体系和主要推论……并附上理论全文的外部链接。"></textarea>
+            <label for="abstract">理论摘要 / Theory Abstract *（可包含全文链接 / full-text link acceptable）</label>
+            <textarea id="abstract" name="abstract" rows="8" required placeholder="Describe your core intuition, axioms, and main deductions...&#10;Include a link to the full text if available."></textarea>
 
-            <button type="submit">打 开 邮 件 客 户 端 提 交</button>
+            <button type="submit">提 交 · Submit</button>
         </form>
     </section>
 
@@ -108,12 +129,14 @@
 
     <section class="footer">
         <p>Crazy Award © 2025 · 无版权，欢迎克隆 · 这是一个娱乐奖项，不代表任何科学认证</p>
-        <p>搭建在 GitHub Pages 上 · 本页面也是一个待穿孔的时空布</p>
+        <p class="en">No copyright. Clone freely. This is an entertainment award and does not represent any scientific certification.</p>
     </section>
 
     <script>
-        // 替换为你的真实邮箱地址
-        const RECIPIENT_EMAIL = '3498013916@qq.com';
+        // =====================
+        // 替换为你的真实邮箱 / Replace with your real email
+        // =====================
+        const RECIPIENT_EMAIL = 'YOUR_EMAIL@example.com';
 
         const form = document.getElementById('submissionForm');
         form.addEventListener('submit', function(event) {
@@ -125,17 +148,14 @@
             const abstract = document.getElementById('abstract').value.trim();
 
             if (!name || !author || !email || !abstract) {
-                alert('请填写所有必填字段。');
+                alert('Please fill in all required fields. / 请填写所有必填字段。');
                 return;
             }
 
-            const subject = `Crazy奖投稿：${name} - ${author}`;
-            const body = `理论名称：${name}\n作者：${author}\n联系邮箱：${email}\n\n理论摘要：\n${abstract}\n\n（请在此邮件基础上直接回复进行审核。）`;
+            const subject = `Crazy Award Submission: ${name} - ${author}`;
+            const body = `Theory Name: ${name}\nAuthor: ${author}\nEmail: ${email}\n\nAbstract:\n${abstract}\n\n(Reply to this email for review result.)\n(回复此邮件以获取审核结果。)`;
 
-            // 构造 mailto 链接
             const mailtoLink = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // 打开邮件客户端
             window.location.href = mailtoLink;
         });
     </script>
