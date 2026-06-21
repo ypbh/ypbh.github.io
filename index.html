@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Award | 表彰自洽的疯狂</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a0a; color: #d4d4d4;
+            font-family: "Courier New", "Noto Serif CJK SC", monospace;
+            max-width: 800px; margin: 0 auto; padding: 2em 1.5em; line-height: 1.8;
+        }
+        h1 {
+            text-align: center; font-size: 2.8em; letter-spacing: 0.15em;
+            border-bottom: 2px solid #d4d4d4; padding-bottom: 0.3em; margin-bottom: 0.8em;
+        }
+        h2 { font-size: 1.6em; margin-top: 2em; border-left: 4px solid #d4d4d4; padding-left: 0.8em; }
+        h3 { font-size: 1.2em; margin-top: 1.5em; color: #b0b0b0; }
+        .subtitle { text-align: center; font-style: italic; margin-bottom: 2.5em; font-size: 1.1em; color: #a0a0a0; }
+        .highlight { color: #ffffff; font-weight: bold; }
+        form {
+            background: #151515; border: 1px solid #333; padding: 2em;
+            margin-top: 1.5em; border-radius: 6px;
+        }
+        label { display: block; margin-top: 1.2em; font-size: 0.95em; color: #ccc; }
+        input, textarea, button {
+            width: 100%; background: #0d0d0d; border: 1px solid #444;
+            color: #eee; padding: 0.8em; margin-top: 0.3em;
+            font-family: inherit; font-size: 1em; border-radius: 4px;
+        }
+        input:focus, textarea:focus { outline: none; border-color: #ffffff; }
+        button {
+            background: #2a2a2a; cursor: pointer; margin-top: 2em;
+            font-weight: bold; transition: background 0.3s; letter-spacing: 0.05em;
+        }
+        button:hover { background: #3d3d3d; }
+        .footer {
+            text-align: center; font-size: 0.85em; color: #555;
+            border-top: 1px solid #333; padding-top: 2em; margin-top: 3em;
+        }
+        .ascii {
+            white-space: pre; font-size: 0.6em; line-height: 1.2;
+            color: #555; text-align: center; margin: 2em 0; overflow-x: auto;
+        }
+        .notice {
+            background: #1e1e1e; border-left: 4px solid #888;
+            padding: 1em; margin-top: 1.5em; font-size: 0.95em; color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Crazy Award</h1>
+    <div class="subtitle">表彰自洽的疯狂 · 不依赖任何学术权威</div>
+
+    <section>
+        <h2>第一章　总则</h2>
+        <p>Crazy奖是一个娱乐性奖项。它表彰的不是“被验证的正确”，而是<span class="highlight">“自洽的疯狂”</span>。它不依附于任何学术机构、任何科研基金、任何国家奖项。它的存在本身，就是对主流评价体系的一次穿孔。</p>
+    </section>
+
+    <section>
+        <h2>第二章　得奖条件</h2>
+        <h3>条件一：绝对自洽</h3>
+        <p>理论内部不能有逻辑矛盾。从第一条公理到最后一个推论，必须形成完整的闭环。</p>
+        <h3>条件二：极度疯狂</h3>
+        <p>理论的核心直觉，必须是主流学术界不敢碰、不愿碰、或者碰了就被边缘化的东西。</p>
+        <h3>条件三：直觉驱动</h3>
+        <p>理论的起点必须是一个或几个强烈的直觉，而不是数学推导。</p>
+        <h3>条件四：概念完整</h3>
+        <p>理论必须是一个体系。有本体论，有操作论，有演化论，有伦理警告。</p>
+    </section>
+
+    <section>
+        <h2>第三章　提交理论（mailto 方式）</h2>
+        <div class="notice">
+            点击下方按钮，将自动调用你设备上的邮件客户端（如 Outlook、Gmail App）。<br>
+            请确保已安装至少一个邮件客户端。如未弹出，可手动发送邮件至 <strong>YOUR_EMAIL@example.com</strong>。
+        </div>
+
+        <form id="submissionForm" action="" method="get">
+            <label for="name">理论名称 *</label>
+            <input type="text" id="name" name="name" required placeholder="例如：布理论">
+
+            <label for="author">作者 / 笔名 *</label>
+            <input type="text" id="author" name="author" required placeholder="例如：一位12岁的观察者">
+
+            <label for="email">你的联系邮箱 *</label>
+            <input type="email" id="email" name="email" required placeholder="用于接收审核结果">
+
+            <label for="abstract">理论摘要 *（可包含全文链接）</label>
+            <textarea id="abstract" name="abstract" rows="8" required placeholder="概述你的核心直觉、公理体系和主要推论……并附上理论全文的外部链接。"></textarea>
+
+            <button type="submit">打 开 邮 件 客 户 端 提 交</button>
+        </form>
+    </section>
+
+    <div class="ascii">
+  #####       ######     *********      ooooooo      aaaaaaa
+ #     #     #      #        *        o       o    a       a
+ #     #     #      #       *        o         o  a         a
+ ######      ######       *         o         o  aaaaaaaaaaa
+ #    #      #    #      *          o         o  a         a
+ #     #     #     #    *            o       o   a         a
+ #      #    #      #  *********      ooooooo    a         a
+        (crazy mind inside)
+    </div>
+
+    <section class="footer">
+        <p>Crazy Award © 2025 · 无版权，欢迎克隆 · 这是一个娱乐奖项，不代表任何科学认证</p>
+        <p>搭建在 GitHub Pages 上 · 本页面也是一个待穿孔的时空布</p>
+    </section>
+
+    <script>
+        // 替换为你的真实邮箱地址
+        const RECIPIENT_EMAIL = '3498013916@qq.com';
+
+        const form = document.getElementById('submissionForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const author = document.getElementById('author').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const abstract = document.getElementById('abstract').value.trim();
+
+            if (!name || !author || !email || !abstract) {
+                alert('请填写所有必填字段。');
+                return;
+            }
+
+            const subject = `Crazy奖投稿：${name} - ${author}`;
+            const body = `理论名称：${name}\n作者：${author}\n联系邮箱：${email}\n\n理论摘要：\n${abstract}\n\n（请在此邮件基础上直接回复进行审核。）`;
+
+            // 构造 mailto 链接
+            const mailtoLink = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // 打开邮件客户端
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+</body>
+</html>
