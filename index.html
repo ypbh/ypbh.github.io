@@ -40,9 +40,11 @@
             text-align: center; font-size: 0.85em; color: #555;
             border-top: 1px solid #333; padding-top: 2em; margin-top: 3em;
         }
-        .ascii {
-            white-space: pre; font-size: 0.6em; line-height: 1.2;
-            color: #555; text-align: center; margin: 2em 0; overflow-x: auto;
+        /* ASCII 容器 */
+        .ascii-art {
+            white-space: pre; text-align: center; margin: 2em 0;
+            font-size: 0.65em; line-height: 1.1; overflow-x: auto;
+            letter-spacing: 0;
         }
         .message {
             margin-top: 1.5em; padding: 1em; background: #1e1e1e;
@@ -50,12 +52,52 @@
         }
         .message.success { border-color: #6a9; color: #9c6; }
         .message.error { border-color: #c66; color: #e88; }
+        /* 颜色定义 */
+        .c-red    { color: #ff4444; }
+        .c-orange { color: #ff8800; }
+        .c-yellow { color: #ffdd00; }
+        .c-green  { color: #44dd44; }
+        .c-cyan   { color: #00cccc; }
+        .c-blue   { color: #4488ff; }
+        .c-purple { color: #cc44cc; }
+        .c-pink   { color: #ff66aa; }
+        .c-white  { color: #ffffff; }
+        .c-gray   { color: #888888; }
+        .c-silver { color: #cccccc; }
     </style>
 </head>
 <body>
 
     <h1>Crazy Award</h1>
     <div class="subtitle">表彰自洽的疯狂 · Celebrating Self-Consistent Madness</div>
+
+    <!-- 完整彩色 ASCII 艺术（不可简化） -->
+    <div class="ascii-art">
+        <span class="c-red">      ██████╗</span><span class="c-orange">██████╗ </span><span class="c-yellow"> █████╗ </span><span class="c-green">███████╗</span><span class="c-cyan">██╗   ██╗</span>
+        <span class="c-red">     ██╔════╝</span><span class="c-orange">██╔══██╗</span><span class="c-yellow">██╔══██╗</span><span class="c-green">╚══███╔╝</span><span class="c-cyan">╚██╗ ██╔╝</span>
+        <span class="c-red">     ██║     </span><span class="c-orange">██████╔╝</span><span class="c-yellow">███████║</span><span class="c-green">  ███╔╝ </span><span class="c-cyan"> ╚████╔╝ </span>
+        <span class="c-red">     ██║     </span><span class="c-orange">██╔══██╗</span><span class="c-yellow">██╔══██║</span><span class="c-green"> ███╔╝  </span><span class="c-cyan">  ╚██╔╝  </span>
+        <span class="c-red">     ╚██████╗</span><span class="c-orange">██║  ██║</span><span class="c-yellow">██║  ██║</span><span class="c-green">███████╗</span><span class="c-cyan">   ██║   </span>
+        <span class="c-red">      ╚═════╝</span><span class="c-orange">╚═╝  ╚═╝</span><span class="c-yellow">╚═╝  ╚═╝</span><span class="c-green">╚══════╝</span><span class="c-cyan">   ╚═╝   </span>
+
+        <span class="c-blue">██████╗ </span><span class="c-purple">██╗   ██╗</span><span class="c-pink">██████╗ </span><span class="c-red">██╗  ██╗</span>  <span class="c-white">╔═══╗</span>
+        <span class="c-blue">██╔══██╗</span><span class="c-purple">╚██╗ ██╔╝</span><span class="c-pink">██╔══██╗</span><span class="c-red">██║  ██║</span>  <span class="c-white">║╔══╝</span>
+        <span class="c-blue">██████╔╝</span><span class="c-purple"> ╚████╔╝ </span><span class="c-pink">██████╔╝</span><span class="c-red">███████║</span>  <span class="c-white">║╚══╗</span>
+        <span class="c-blue">██╔═══╝ </span><span class="c-purple">  ╚██╔╝  </span><span class="c-pink">██╔═══╝ </span><span class="c-red">╚════██║</span>  <span class="c-white">║╔══╝</span>
+        <span class="c-blue">██║     </span><span class="c-purple">   ██║   </span><span class="c-pink">██║     </span><span class="c-red">     ██║</span>  <span class="c-white">╚═══╗</span>
+        <span class="c-blue">╚═╝     </span><span class="c-purple">   ╚═╝   </span><span class="c-pink">╚═╝     </span><span class="c-red">     ╚═╝</span>  <span class="c-white">╚═══╝</span>
+
+        <span class="c-silver">    ███████╗ █████╗ ██████╗ ██████╗ ██╗ ██████╗</span>
+        <span class="c-silver">    ██╔════╝██╔══██╗██╔══██╗██╔══██╗██║██╔════╝</span>
+        <span class="c-silver">    █████╗  ███████║██████╔╝██████╔╝██║██║     </span>
+        <span class="c-silver">    ██╔══╝  ██╔══██║██╔══██╗██╔══██╗██║██║     </span>
+        <span class="c-silver">    ██║     ██║  ██║██████╔╝██║  ██║██║╚██████╗</span>
+        <span class="c-silver">    ╚═╝     ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝ ╚═════╝</span>
+
+        <span class="c-gray">        ╔╗ ╦ ╦  ╔═╗ ╔╗╔  ╔═╗ ╦ ╦ ╔═╗ ╦═╗</span>
+        <span class="c-gray">        ╠╩╗╚╦╝  ║ ║ ║║║  ║   ║ ║ ║ ║ ╠╦╝</span>
+        <span class="c-gray">        ╚═╝ ╩   ╚═╝ ╝╚╝  ╚═╝ ╚═╝ ╚═╝ ╩╚═</span>
+    </div>
 
     <section>
         <h2>第一章　总则</h2>
@@ -67,22 +109,18 @@
     <section>
         <h2>第二章　得奖条件</h2>
         <span class="en">Chapter 2 · Award Criteria</span>
-
         <h3>条件一：绝对自洽</h3>
         <span class="en">Criterion 1 · Absolute Self-Consistency</span>
         <p>理论内部不能有逻辑矛盾。从第一条公理到最后一个推论，必须形成完整的闭环。</p>
         <p class="en">The theory must contain no internal logical contradictions. From the first axiom to the final deduction, it must form a complete closed loop.</p>
-
         <h3>条件二：极度疯狂</h3>
         <span class="en">Criterion 2 · Extreme Madness</span>
         <p>理论的核心直觉，必须是主流学术界不敢碰、不愿碰、或者碰了就被边缘化的东西。</p>
         <p class="en">The core intuition of the theory must be something that mainstream academia dares not touch, refuses to touch, or has marginalized after touching.</p>
-
         <h3>条件三：直觉驱动</h3>
         <span class="en">Criterion 3 · Intuition-Driven</span>
         <p>理论的起点必须是一个或几个强烈的直觉，而不是数学推导。</p>
         <p class="en">The starting point of the theory must be one or several powerful intuitions, not mathematical derivations.</p>
-
         <h3>条件四：概念完整</h3>
         <span class="en">Criterion 4 · Conceptual Completeness</span>
         <p>理论必须是一个体系。有本体论，有操作论，有演化论，有伦理警告。</p>
@@ -98,31 +136,16 @@
         <form id="submissionForm">
             <label for="name">理论名称 / Theory Name *</label>
             <input type="text" id="name" name="name" required placeholder="例如：Fabric Theory / 布理论">
-
             <label for="author">作者 / 笔名 *</label>
             <input type="text" id="author" name="author" required placeholder="Author or pen name">
-
             <label for="email">你的联系邮箱 / Your Email *</label>
             <input type="email" id="email" name="email" required placeholder="To receive review result">
-
             <label for="abstract">理论摘要 / Theory Abstract *（可包含全文链接）</label>
             <textarea id="abstract" name="abstract" rows="8" required placeholder="Describe your core intuition, axioms, and main deductions...&#10;Include a link to the full text if available."></textarea>
-
             <button type="submit">提 交 · Submit</button>
             <div id="formMessage" class="message"></div>
         </form>
     </section>
-
-    <div class="ascii">
-  #####       ######     *********      ooooooo      aaaaaaa
- #     #     #      #        *        o       o    a       a
- #     #     #      #       *        o         o  a         a
- ######      ######       *         o         o  aaaaaaaaaaa
- #    #      #    #      *          o         o  a         a
- #     #     #     #    *            o       o   a         a
- #      #    #      #  *********      ooooooo    a         a
-        (crazy mind inside)
-    </div>
 
     <section class="footer">
         <p>Crazy Award © 2025 · 无版权，欢迎克隆 · 这是一个娱乐奖项，不代表任何科学认证</p>
@@ -133,11 +156,11 @@
     <script type="module">
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
+        // 替换为你的 Supabase 项目信息
         const SUPABASE_URL = 'https://xbmnvstztkofbnravkde.supabase.co'
         const SUPABASE_ANON_KEY = 'sb_publishable_ocD4_MrKzXIMocmVo_EAIg_K3LoUM9d'
 
         const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-
         const form = document.getElementById('submissionForm')
         const msgDiv = document.getElementById('formMessage')
 
@@ -153,7 +176,7 @@
 
             if (!name || !author || !email || !abstract) {
                 msgDiv.className = 'message error'
-                msgDiv.textContent = '请填写所有必填字段。/ Please fill in all required fields.'
+                msgDiv.textContent = '请填写所有必填字段。'
                 msgDiv.style.display = 'block'
                 return
             }
@@ -165,7 +188,7 @@
                         theory_name: name,
                         author: author,
                         email: email,
-                        Abstract: abstract,   // 大写 A，匹配数据库列名
+                        abstract: abstract,
                         status: 'pending'
                     }
                 ])
@@ -182,6 +205,5 @@
             }
         })
     </script>
-
 </body>
 </html>
