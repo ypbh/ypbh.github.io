@@ -131,12 +131,8 @@
 
     <!-- Supabase 集成 -->
     <script type="module">
-        // ========================================
-        // 配置 Supabase
-        // ========================================
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-        // 替换为你的 Supabase 项目 URL 和 anon key
         const SUPABASE_URL = 'https://xbmnvstztkofbnravkde.supabase.co'
         const SUPABASE_ANON_KEY = 'sb_publishable_ocD4_MrKzXIMocmVo_EAIg_K3LoUM9d'
 
@@ -162,7 +158,6 @@
                 return
             }
 
-            // 插入数据到 submissions 表
             const { data, error } = await supabase
                 .from('submissions2')
                 .insert([
@@ -170,8 +165,8 @@
                         theory_name: name,
                         author: author,
                         email: email,
-                        abstract: abstract,
-                        status: 'pending'  // 默认状态
+                        Abstract: abstract,   // 大写 A，匹配数据库列名
+                        status: 'pending'
                     }
                 ])
 
