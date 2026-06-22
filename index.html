@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crazy Award | 表彰自洽的疯狂 · Celebrating Self-Consistent Madness</title>
+    <title>Crazy Award | 表彰自洽的疯狂</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -44,11 +44,12 @@
             white-space: pre; font-size: 0.6em; line-height: 1.2;
             color: #555; text-align: center; margin: 2em 0; overflow-x: auto;
         }
-        .notice {
-            background: #1e1e1e; border-left: 4px solid #888;
-            padding: 1em; margin-top: 1.5em; font-size: 0.95em; color: #aaa;
+        .message {
+            margin-top: 1.5em; padding: 1em; background: #1e1e1e;
+            border-left: 4px solid #888; font-size: 0.95em; display: none;
         }
-        .notice .en { color: #888; }
+        .message.success { border-color: #6a9; color: #9c6; }
+        .message.error { border-color: #c66; color: #e88; }
     </style>
 </head>
 <body>
@@ -91,15 +92,10 @@
     <section>
         <h2>第三章　提交理论</h2>
         <span class="en">Chapter 3 · Submit Your Theory</span>
-        <div class="notice">
-            点击下方按钮，将自动调用你设备上的邮件客户端。<br>
-            请确保已安装至少一个邮件客户端。如未弹出，可手动发送邮件至 <strong>YOUR_EMAIL@example.com</strong>。
-            <br><br>
-            <span class="en">Click the button below to open your email client automatically.<br>
-            Make sure at least one email client is installed. If it does not pop up, manually send to <strong>YOUR_EMAIL@example.com</strong>.</span>
-        </div>
+        <p>提交后将存入数据库，评审员（可能是另一个维度的生物）将进行人工审核。结果会通过邮件通知。</p>
+        <p class="en">Submissions are stored in a database. Reviewers (possibly beings from another dimension) will manually review. Results will be sent by email.</p>
 
-        <form id="submissionForm" action="" method="get">
+        <form id="submissionForm">
             <label for="name">理论名称 / Theory Name *</label>
             <input type="text" id="name" name="name" required placeholder="例如：Fabric Theory / 布理论">
 
@@ -109,10 +105,11 @@
             <label for="email">你的联系邮箱 / Your Email *</label>
             <input type="email" id="email" name="email" required placeholder="To receive review result">
 
-            <label for="abstract">理论摘要 / Theory Abstract *（可包含全文链接 / full-text link acceptable）</label>
+            <label for="abstract">理论摘要 / Theory Abstract *（可包含全文链接）</label>
             <textarea id="abstract" name="abstract" rows="8" required placeholder="Describe your core intuition, axioms, and main deductions...&#10;Include a link to the full text if available."></textarea>
 
             <button type="submit">提 交 · Submit</button>
+            <div id="formMessage" class="message"></div>
         </form>
     </section>
 
@@ -132,32 +129,63 @@
         <p class="en">No copyright. Clone freely. This is an entertainment award and does not represent any scientific certification.</p>
     </section>
 
-    <script>
-        // =====================
-        // 替换为你的真实邮箱 / Replace with your real email
-        // =====================
-        const RECIPIENT_EMAIL = '3498013916@qq.com';
+    <!-- Supabase 集成 -->
+    <script type="module">
+        // ========================================
+        // 配置 Supabase
+        // ========================================
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-        const form = document.getElementById('submissionForm');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
+        // 替换为你的 Supabase 项目 URL 和 anon key
+        const SUPABASE_URL = 'https://xbmnvstztkofbnravkde.supabase.co'
+        const SUPABASE_ANON_KEY = 'sb_publishable_ocD4_MrKzXIMocmVo_EAIg_K3LoUM9d'
 
-            const name = document.getElementById('name').value.trim();
-            const author = document.getElementById('author').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const abstract = document.getElementById('abstract').value.trim();
+        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+        const form = document.getElementById('submissionForm')
+        const msgDiv = document.getElementById('formMessage')
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            msgDiv.style.display = 'none'
+            msgDiv.className = 'message'
+
+            const name = document.getElementById('name').value.trim()
+            const author = document.getElementById('author').value.trim()
+            const email = document.getElementById('email').value.trim()
+            const abstract = document.getElementById('abstract').value.trim()
 
             if (!name || !author || !email || !abstract) {
-                alert('Please fill in all required fields. / 请填写所有必填字段。');
-                return;
+                msgDiv.className = 'message error'
+                msgDiv.textContent = '请填写所有必填字段。/ Please fill in all required fields.'
+                msgDiv.style.display = 'block'
+                return
             }
 
-            const subject = `Crazy Award Submission: ${name} - ${author}`;
-            const body = `Theory Name: ${name}\nAuthor: ${author}\nEmail: ${email}\n\nAbstract:\n${abstract}\n\n(Reply to this email for review result.)\n(回复此邮件以获取审核结果。)`;
+            // 插入数据到 submissions 表
+            const { data, error } = await supabase
+                .from('submissions')
+                .insert([
+                    {
+                        theory_name: name,
+                        author: author,
+                        email: email,
+                        abstract: abstract,
+                        status: 'pending'  // 默认状态
+                    }
+                ])
 
-            const mailtoLink = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-        });
+            if (error) {
+                msgDiv.className = 'message error'
+                msgDiv.textContent = `❌ 提交失败：${error.message}`
+                msgDiv.style.display = 'block'
+            } else {
+                msgDiv.className = 'message success'
+                msgDiv.innerHTML = `✅ 理论「${name}」已成功提交。<br><br>📬 审核结果将发送至 ${email}。<br><br>感谢你对自洽疯狂的贡献。`
+                msgDiv.style.display = 'block'
+                form.reset()
+            }
+        })
     </script>
 
 </body>
