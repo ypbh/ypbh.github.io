@@ -164,7 +164,7 @@
 
             // 插入数据到 submissions 表
             const { data, error } = await supabase
-                .from('submissions')
+                .from('submissions2')
                 .insert([
                     {
                         theory_name: name,
